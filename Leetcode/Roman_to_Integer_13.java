@@ -2,7 +2,7 @@
  * @Author: Pig Keeper 
  * @Date: 2022-05-26 15:49:53 
  * @Last Modified by: Pig Keeper
- * @Last Modified time: 2022-05-26 17:18:47
+ * @Last Modified time: 2022-05-27 15:51:05
  */
 package Leetcode;
 
@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 import static java.util.Map.entry;
 
-public class Roman_to_Integer {
+public class Roman_to_Integer_13 {
     /**
      * values : used to store all the unique possible roman values
      */
@@ -37,10 +37,12 @@ public class Roman_to_Integer {
         entry("M", 1000)
     ));
 
-    public void execute (String[] args) {
+    public Roman_to_Integer_13() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println(romanToInt(sc.nextLine()));
+
+        sc.close();
     }
 
     private int romanToInt(String s) {
