@@ -1,15 +1,16 @@
 /*
- * @Author: Pig Keeper 
- * @Date: 2022-05-27 21:45:50 
- * @Last Modified by: Pig Keeper
- * @Last Modified time: 2022-05-27 21:57:59
+ * @Created on Sat May 27 2022 21:45:50 
+ * @ProblemLink https://leetcode.com/problems/maximum-subarray/
+ *
+ * @Author Pig Keeper
  */
+
 package Leetcode;
 
 import java.util.Scanner;
 
 public class Maximum_Subarray_53 {
-    public Maximum_Subarray_53() {
+    public static void main(String[] args) {        
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         int[] arr = new int[size];
@@ -18,20 +19,22 @@ public class Maximum_Subarray_53 {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println(maxSubArray(arr));
+        System.out.println((new Inner()).maxSubArray(arr));
         sc.close();
     }
 
-    private int maxSubArray(int[] arr) {
-        int currSum = arr[0];
-        int resSum = arr[0];
-        
-        int size = arr.length;
-
-        for(int i = 1; i < size; i++) {
-            currSum = Math.max(currSum + arr[i], arr[i]);
-            resSum = Math.max(resSum, currSum);
+    static class Inner {
+        public int maxSubArray(int[] arr) {
+            int currSum = arr[0];
+            int resSum = arr[0];
+            
+            int size = arr.length;
+    
+            for(int i = 1; i < size; i++) {
+                currSum = Math.max(currSum + arr[i], arr[i]);
+                resSum = Math.max(resSum, currSum);
+            }
+            return resSum;
         }
-        return resSum;
     }
 }
