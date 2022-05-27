@@ -5,7 +5,7 @@
  * @Author Pig Keeper
  */
 
-package Leetcode;
+package leetcode;
 
 import java.util.HashSet;
 import java.util.Scanner;

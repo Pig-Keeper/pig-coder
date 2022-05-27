@@ -1,11 +1,13 @@
 /*
- * @Created on Sat May 28 2022 03:19:26
- * @Author Pig Keeper
+ * @Created on Sat May 28 2022 04:03:37
  * @ProblemCode PRIZEPOOL
  * @ProblemLink https://www.codechef.com/submit-v2/PRIZEPOOL
+ *
+ * @Author Pig Keeper
  */
 
-package CodeChef;
+
+package codechef.practice;
 
 import java.util.Scanner;
 
