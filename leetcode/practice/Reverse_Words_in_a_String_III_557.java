@@ -6,7 +6,6 @@
  */
 package leetcode.practice;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Reverse_Words_in_a_String_III_557 {
@@ -45,7 +44,7 @@ public class Reverse_Words_in_a_String_III_557 {
                     charArr[end--] = temp;
                 }
             }
-            
+
             return String.valueOf(charArr);
         }
     }

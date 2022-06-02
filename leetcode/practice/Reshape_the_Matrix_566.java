@@ -27,6 +27,7 @@ public class Reshape_the_Matrix_566 {
         int c = sc.nextInt();
 
         System.out.println(Arrays.deepToString((new Inner()).matrixReshape(arr, r, c)));
+        sc.close();
     }
 
     static class Inner{

@@ -22,6 +22,7 @@ public class Two_Sum_II_Input_Array_Is_Sorted {
         int target = sc.nextInt();
 
         System.out.println(Arrays.toString((new Inner()).twoSum(arr, target)));
+        sc.close();
     }
 
     static class Inner{
