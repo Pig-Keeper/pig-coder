@@ -21,6 +21,8 @@ public class Total_Prize_Money {
 
             System.out.println((new Inner()).totalPrizeMoney(sc.nextInt(), sc.nextInt()));
         }
+
+        sc.close();
     }
 
     static class Inner {
