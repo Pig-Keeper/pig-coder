@@ -9,13 +9,13 @@ package leetcode.practice;
 
 import java.util.Scanner;
 
-import geeksforgeeks.SinglyLinkedList;
-import geeksforgeeks.SinglyLinkedListNode;
+import geeksforgeeks.singly_linked_list.SinglyLinkedList;
+import geeksforgeeks.singly_linked_list.SinglyLinkedListNode;
 
 public class Middle_of_the_Linked_List_876 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
 
         int size = sc.nextInt();
         for (int i = 0 ; i < size; i++) {
@@ -23,9 +23,9 @@ public class Middle_of_the_Linked_List_876 {
         }
 
         // Internal implementation of `geeksforgeeks.SinglyLinkedList`
-        System.out.println(singlyLinkedList.getSecondMiddleNode().getData());
+        System.out.println(singlyLinkedList.getSecondMiddleNode().getValue());
 
-        System.out.println((new Inner()).middleNode(singlyLinkedList.getHead()).getData());
+        System.out.println((new Inner()).middleNode(singlyLinkedList.getHead()).getValue());
 
         sc.close();
     }
@@ -33,10 +33,10 @@ public class Middle_of_the_Linked_List_876 {
     static class Inner {
         // Leetcode solution has parameter type to ListNode
         // change all `SinglyLinkedListNode` to `ListNode` while submission
-
-        public SinglyLinkedListNode middleNode(SinglyLinkedListNode head) {
-            SinglyLinkedListNode fast = head;
-            SinglyLinkedListNode slow = head;
+        // also change the method `getNext()` to `next` and `setNext` to = *.next` 
+        public SinglyLinkedListNode<Integer> middleNode(SinglyLinkedListNode<Integer> head) {
+            SinglyLinkedListNode<Integer> fast = head;
+            SinglyLinkedListNode<Integer> slow = head;
 
             while(fast != null && fast.getNext() != null) {
                 slow = slow.getNext();
@@ -45,7 +45,23 @@ public class Middle_of_the_Linked_List_876 {
                     fast = fast.getNext();
                 }
             }
+
             return slow;
         }
+
+        // Leetcode submission
+        // public ListNode middleNode(ListNode head) {
+        //     ListNode fast = head;
+        //     ListNode slow = head;
+
+        //     while(fast != null && fast.next != null) {
+        //         slow = slow.next;
+        //         fast = fast.next;
+        //         if(fast != null) {
+        //             fast = fast.next;
+        //         }
+        //     }
+        //     return slow;
+        // }
     }
 }
