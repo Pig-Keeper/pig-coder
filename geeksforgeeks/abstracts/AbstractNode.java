@@ -8,7 +8,7 @@ public abstract class AbstractNode<T> {
     protected Pool<AbstractNode<T>> pool;
     
     public AbstractNode() {
-        this(null, -1);
+        this(-1);
     }
 
     public AbstractNode(T value) {
@@ -44,5 +44,8 @@ public abstract class AbstractNode<T> {
         System.out.println(this.value);
     }
 
-    public abstract void printDeep();
+    @Override
+    public String toString() {
+        return String.valueOf(this.getValue());
+    }
 }

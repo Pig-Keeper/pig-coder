@@ -514,19 +514,16 @@ public class SinglyLinkedList<T extends Comparable<T>> {
      * @ProblemLink `Enter Problem Link here`
      */
     public SinglyLinkedList<T> print(String msg) {
-        SinglyLinkedListNode<T> temp = head;
-
         if(!msg.isBlank()) {
-            System.out.print(msg);
+            System.out.println(msg);
         }
         
-        while(temp != null) {
-            System.out.print(temp.getValue());
-            temp = temp.getNext();
-            if(temp != null) {
-                System.out.print("->");
-            }
+        if(head == null) {
+            System.out.print("");
+            return this;
         }
+
+        head.printDeep();
 
         System.out.println("");
         return this;

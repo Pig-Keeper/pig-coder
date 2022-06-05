@@ -16,12 +16,12 @@ public class SinglyLinkedListNode<T> extends AbstractNode<T> {
     }
 
     public SinglyLinkedListNode(T value) {
-        super(value, 1);
+        this(value, null);
     }
 
     public SinglyLinkedListNode(T value, SinglyLinkedListNode<T> next) {
         super(value, 1);
-        this.pool.add(next);
+        this.pool.add(next, 0);
     }
 
     public SinglyLinkedListNode<T> getNext() {
@@ -35,7 +35,7 @@ public class SinglyLinkedListNode<T> extends AbstractNode<T> {
     public void printDeep() {
         this.print();
         if(this.getNext() != null) {
-            System.out.print("->");
+            System.out.print(" ");
             this.getNext().printDeep();;
         }
     }

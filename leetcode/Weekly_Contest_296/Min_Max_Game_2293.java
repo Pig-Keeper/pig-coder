@@ -5,7 +5,7 @@
  * @Author Pig Keeper
  */
 
-package leetcode.practice.Weekly_Contest_296;
+package leetcode.Weekly_Contest_296;
 
 import java.util.Scanner;
 
