@@ -6,95 +6,69 @@
  */
 package geeksforgeeks.binary_tree;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 import java.util.Stack;
 
-public class BinaryTree<T> {
-    private BinaryTreeNode<T> root;
+public class BinaryTreeWithNext<T> {
+    private BinaryTreeNodeWithNext<T> root;
 
-    public BinaryTree() {
+    public BinaryTreeWithNext() {
         this.root = null;
     }
 
-    public BinaryTree(List<T> list) {
-        if(list.size() == 0)
-            return;
-        
-        insertByString("t", list.get(0));
-        int length = 1;
-        
-        Queue<String> queue = new LinkedList<>();
-        queue.add("");
-
-        while(length < list.size()) {
-            String curr = queue.poll();
-            insertByString(curr + "l", list.get(length++));
-
-            if(length < list.size()) {
-                insertByString(curr + "r", list.get(length++));
-            }
-
-            queue.add(curr + "l");
-            queue.add(curr + "r");
-        }
-    }
-
-    public BinaryTreeNode<T> getRoot() {
+    public BinaryTreeNodeWithNext<T> getRoot() {
         return this.root;
     }
 
-    public BinaryTree<T> insertLeftMost(T value) {
+    public BinaryTreeWithNext<T> insertLeftMost(T value) {
         if(root == null) {
-            root = new BinaryTreeNode<T>(value);
+            root = new BinaryTreeNodeWithNext<T>(value);
             return this;
         }
 
-        BinaryTreeNode<T> temp = root;
+        BinaryTreeNodeWithNext<T> temp = root;
         while(temp.getLeft() != null) {
             temp = temp.getLeft();
         }
 
-        temp.setLeft(new BinaryTreeNode<T>(value));
+        temp.setLeft(new BinaryTreeNodeWithNext<T>(value));
         return this;
     }
 
-    public BinaryTree<T> insertRightMost(T value) {
+    public BinaryTreeWithNext<T> insertRightMost(T value) {
         if(root == null) {
-            root = new BinaryTreeNode<T>(value);
+            root = new BinaryTreeNodeWithNext<T>(value);
             return this;
         }
 
-        BinaryTreeNode<T> temp = root;
+        BinaryTreeNodeWithNext<T> temp = root;
         while(temp.getRight() != null) {
             temp = temp.getRight();
         }
 
-        temp.setRight(new BinaryTreeNode<T>(value));
+        temp.setRight(new BinaryTreeNodeWithNext<T>(value));
         return this;
     }
 
-    public BinaryTree<T> insertAtFirstEmpty(T value) {
+    public BinaryTreeWithNext<T> insertAtFirstEmpty(T value) {
         if(root == null) {
-            root = new BinaryTreeNode<T>(value);
+            root = new BinaryTreeNodeWithNext<T>(value);
             return this;
         }
 
-        Stack<BinaryTreeNode<T>> stack = new Stack<>();
+        Stack<BinaryTreeNodeWithNext<T>> stack = new Stack<>();
         stack.push(root);
 
         while(stack != null) {
-            BinaryTreeNode<T> temp = stack.pop();
+            BinaryTreeNodeWithNext<T> temp = stack.pop();
             if(temp.getLeft() == null) {
-                temp.setLeft(new BinaryTreeNode<T>(value));
+                temp.setLeft(new BinaryTreeNodeWithNext<T>(value));
                 return this;
             } else {
                 stack.push(temp.getLeft());
             }
 
             if(temp.getRight() == null) {
-                temp.setRight(new BinaryTreeNode<T>(value));
+                temp.setRight(new BinaryTreeNodeWithNext<T>(value));
                 return this;
             } else {
                 stack.push(temp.getRight());
@@ -104,11 +78,11 @@ public class BinaryTree<T> {
         return this;
     }
 
-    public BinaryTree<T> insertByString(String str, T value) {
+    public BinaryTreeWithNext<T> insertByString(String str, T value) {
         str = str.toLowerCase().trim();
         
         if(root == null && str.equals("t")) {
-            root = new BinaryTreeNode<T>(value);
+            root = new BinaryTreeNodeWithNext<T>(value);
             return this;
         }
 
@@ -116,9 +90,9 @@ public class BinaryTree<T> {
         return this;
     }
 
-    private BinaryTreeNode<T> insertByString(BinaryTreeNode<T> root, String str, T value, int index) {
+    private BinaryTreeNodeWithNext<T> insertByString(BinaryTreeNodeWithNext<T> root, String str, T value, int index) {
         if(index == str.length() && root == null) {
-            return new BinaryTreeNode<T>(value);
+            return new BinaryTreeNodeWithNext<T>(value);
         }
 
         if(index == str.length()) {
@@ -142,11 +116,11 @@ public class BinaryTree<T> {
         return root;
     }
 
-    public BinaryTree<T> printInorder() {
+    public BinaryTreeWithNext<T> printInorder() {
         return this.printInorder("");
     }
 
-    public BinaryTree<T> printInorder(String msg) {
+    public BinaryTreeWithNext<T> printInorder(String msg) {
         if(!msg.isBlank()) {
             System.out.println(msg);
         }
@@ -162,11 +136,11 @@ public class BinaryTree<T> {
         return this;
     }
 
-    public BinaryTree<T> printPreorder() {
+    public BinaryTreeWithNext<T> printPreorder() {
         return this.printPreorder("");
     }
 
-    public BinaryTree<T> printPreorder(String msg) {
+    public BinaryTreeWithNext<T> printPreorder(String msg) {
         if(!msg.isBlank()) {
             System.out.println(msg);
         }
@@ -182,11 +156,11 @@ public class BinaryTree<T> {
         return this;
     }
 
-    public BinaryTree<T> printPostorder() {
+    public BinaryTreeWithNext<T> printPostorder() {
         return this.printPostorder("");
     }
 
-    public BinaryTree<T> printPostorder(String msg) {
+    public BinaryTreeWithNext<T> printPostorder(String msg) {
         if(!msg.isBlank()) {
             System.out.println(msg);
         }

@@ -24,6 +24,8 @@ public class The_two_numbers {
     }
 
     static class Inner{
+        // Approach -> Partially Correct
+        // Also missed edge case when x = 2
         public int theTwoNumbers(int x) {
             int half = x/2;
             if(x % 2 == 0) {

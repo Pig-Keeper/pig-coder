@@ -24,6 +24,7 @@ public class Break_the_Stick {
         sc.close();
     }
 
+    // Approach -> Correct
     static class Inner{
         public String breakTheStick(int x, int y) {
             return x%2 == 1 && y%2 == 0 ? "NO" : "YES";

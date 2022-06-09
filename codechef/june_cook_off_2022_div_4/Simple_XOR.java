@@ -25,6 +25,8 @@ public class Simple_XOR {
     }
 
     static class Inner{
+        // Approach -> Wrong
+        // Somehow submission was successful
         public void simpleXor(int l, int r) {
             if(!binarySearch(l ,r)) {
                 System.out.println(-1);

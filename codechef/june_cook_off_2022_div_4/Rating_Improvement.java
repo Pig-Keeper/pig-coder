@@ -25,6 +25,7 @@ public class Rating_Improvement {
     }
 
     static class Inner{
+        // Approach -> Correct
         public String ratingImprovement(int x, int y) {
             return y >= x && y - x <= 200 ? "YES" : "NO";
         }

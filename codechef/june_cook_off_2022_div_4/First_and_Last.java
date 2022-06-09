@@ -29,6 +29,7 @@ public class First_and_Last {
     }
 
     static class Inner{
+        // Approach -> Correct
         public int firstAndLast(int[] arr) {
             int length = arr.length;
 

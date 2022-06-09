@@ -42,11 +42,11 @@ public class BinaryTreeNode<T> extends AbstractNode<T> {
     }
 
     public void printInorder() {
-        System.out.print(this.toString() + " ");
-
         if(this.getLeft() != null) {
             this.getLeft().printInorder();
         }
+
+        System.out.print(this.toString() + " ");
 
         if(this.getRight() != null) {
             this.getRight().printInorder();
@@ -54,11 +54,11 @@ public class BinaryTreeNode<T> extends AbstractNode<T> {
     }
 
     public void printPreorder() {
+        System.out.print(this.toString() + " ");
+        
         if(this.getLeft() != null) {
             this.getLeft().printPreorder();
         }
-
-        System.out.print(this.toString() + " ");
 
         if(this.getRight() != null) {
             this.getRight().printPreorder();

@@ -25,6 +25,7 @@ public class Playlist {
     }
 
     static class Inner{
+        // Approach -> Correct
         public int playlist(int x, int y) {
             return x / (3 * y);
         }
