@@ -1,12 +1,14 @@
 /*
  * @Created on Wed Jun 08 2022 17:42:24
- * @ProblemLink `Enter Problem Link here`
+ * @ProblemLink https://leetcode.com/problems/symmetric-tree/
  *
  * @Author Pig Keeper
  */
 
 package leetcode.practice;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import geeksforgeeks.binary_tree.BinaryTree;
@@ -15,17 +17,24 @@ import geeksforgeeks.binary_tree.BinaryTreeNode;
 public class Symmetric_Tree_101 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int size1 = sc.nextInt();
+        int size = sc.nextInt();
 
-        BinaryTree<Integer> binaryTree1 = new BinaryTree<>();
-
-        for(int i = 0; i < size1; i++) {
-            binaryTree1.insertByString(sc.next(), sc.nextInt());
+        List<Integer> list = new ArrayList<>();
+        
+        for(int i = 0; i < size; i++) {
+            String value = sc.next();
+            if(value.equals("null")) {
+                list.add(null);
+            } else {
+                list.add(Integer.valueOf(value));
+            }   
         }
 
-        binaryTree1.printInorder();
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(list);
 
-        System.out.println((new Inner()).isSymmetric(binaryTree1.getRoot()));
+        binaryTree.printInorder();
+
+        System.out.println((new Inner()).isSymmetric(binaryTree.getRoot()));
         sc.close();
     }
 

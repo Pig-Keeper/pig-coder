@@ -17,17 +17,24 @@ import geeksforgeeks.binary_tree.BinaryTreeNode;
 public class Binary_Tree_Postorder_Traversal_145 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int size1 = sc.nextInt();
+        int size = sc.nextInt();
 
-        BinaryTree<Integer> binaryTree1 = new BinaryTree<>();
-
-        for(int i = 0; i < size1; i++) {
-            binaryTree1.insertByString(sc.next(), sc.nextInt());
+        List<Integer> list = new ArrayList<>();
+        
+        for(int i = 0; i < size; i++) {
+            String value = sc.next();
+            if(value.equals("null")) {
+                list.add(null);
+            } else {
+                list.add(Integer.valueOf(value));
+            }   
         }
 
-        binaryTree1.printPostorder();
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(list);
 
-        System.out.println((new Inner()).postorderTraversal(binaryTree1.getRoot()));
+        binaryTree.printPostorder();
+
+        System.out.println((new Inner()).postorderTraversal(binaryTree.getRoot()));
         sc.close();
     }
 

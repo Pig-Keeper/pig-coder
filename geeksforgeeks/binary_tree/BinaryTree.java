@@ -30,14 +30,16 @@ public class BinaryTree<T> {
 
         while(length < list.size()) {
             String curr = queue.poll();
-            insertByString(curr + "l", list.get(length++));
+            if(curr != null) {
+                insertByString(curr + "l", list.get(length++));
 
-            if(length < list.size()) {
-                insertByString(curr + "r", list.get(length++));
+                if(length < list.size()) {
+                    insertByString(curr + "r", list.get(length++));
+                }
+    
+                queue.add(curr + "l");
+                queue.add(curr + "r");
             }
-
-            queue.add(curr + "l");
-            queue.add(curr + "r");
         }
     }
 
@@ -46,6 +48,10 @@ public class BinaryTree<T> {
     }
 
     public BinaryTree<T> insertLeftMost(T value) {
+        if(value == null) {
+            return this;
+        }
+        
         if(root == null) {
             root = new BinaryTreeNode<T>(value);
             return this;
@@ -61,6 +67,10 @@ public class BinaryTree<T> {
     }
 
     public BinaryTree<T> insertRightMost(T value) {
+        if(value == null) {
+            return this;
+        }
+
         if(root == null) {
             root = new BinaryTreeNode<T>(value);
             return this;
@@ -76,6 +86,10 @@ public class BinaryTree<T> {
     }
 
     public BinaryTree<T> insertAtFirstEmpty(T value) {
+        if(value == null) {
+            return this;
+        }
+
         if(root == null) {
             root = new BinaryTreeNode<T>(value);
             return this;
@@ -105,6 +119,10 @@ public class BinaryTree<T> {
     }
 
     public BinaryTree<T> insertByString(String str, T value) {
+        if(value == null) {
+            return this;
+        }
+
         str = str.toLowerCase().trim();
         
         if(root == null && str.equals("t")) {
