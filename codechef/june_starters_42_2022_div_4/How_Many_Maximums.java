@@ -6,7 +6,7 @@
  * @Author Pig Keeper
  */
 
-package codechef.starters_42_div_4;
+package codechef.june_starters_42_2022_div_4;
 
 import java.util.Arrays;
 import java.util.Scanner;
